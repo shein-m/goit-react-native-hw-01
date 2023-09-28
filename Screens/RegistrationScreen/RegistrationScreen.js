@@ -1,15 +1,7 @@
 import { useState } from 'react';
 import { SvgXml } from 'react-native-svg';
 import { svgSprite } from '../../src/images/svg/add';
-import {
-  Button,
-  ImageBackground,
-  Pressable,
-  StyleSheet,
-  Text,
-  TextInput,
-  View,
-} from 'react-native';
+import { ImageBackground, Pressable, StyleSheet, Text, TextInput, View } from 'react-native';
 const bgPath = require('../../src/images/bg.jpeg');
 
 export const RegistrationScreen = () => {
@@ -27,6 +19,8 @@ export const RegistrationScreen = () => {
   const handleAddProfilePhoto = () => {
     console.log('add');
   };
+
+  const handleSignIn = () => {};
 
   return (
     <View style={styles.wrapper}>
@@ -60,7 +54,7 @@ export const RegistrationScreen = () => {
               placeholder="Адреса електронної пошти"
               onChangeText={text => setEmail(text)}
             />
-            <View style={styles.regInputWrapper}>
+            <View style={styles.regInputPasswordWrapper}>
               <TextInput
                 value={password}
                 secureTextEntry={showPassword}
@@ -72,20 +66,14 @@ export const RegistrationScreen = () => {
                 {showPassword ? 'Показати' : 'Сховати'}
               </Text>
             </View>
-            <View>
-              <Pressable style={styles.regFormButton} onPress={handlePressButton}>
-                <Text style={styles.regFormButtonText}>Зареєстуватися</Text>
-              </Pressable>
-            </View>
-            <View>
-              <Pressable
-                onPress={() => {
-                  console.log('123');
-                }}
-              >
-                <Text style={styles.regFormToSignIn}>Вже є акаунт? Увійти</Text>
-              </Pressable>
-            </View>
+
+            <Pressable style={styles.regFormButton} onPress={handlePressButton}>
+              <Text style={styles.regFormButtonText}>Зареєстуватися</Text>
+            </Pressable>
+
+            <Pressable onPress={handleSignIn}>
+              <Text style={styles.regFormToSignIn}>Вже є акаунт? Увійти</Text>
+            </Pressable>
           </View>
         </View>
       </ImageBackground>
@@ -153,7 +141,7 @@ const styles = StyleSheet.create({
     marginBottom: 0,
   },
 
-  regInputWrapper: {
+  regInputPasswordWrapper: {
     position: 'relative',
     justifyContent: 'center',
     marginBottom: 43,
