@@ -5,8 +5,8 @@ import { LoginScreen } from './Screens/LoginScreen/LoginScreen';
 export default function App() {
   return (
     <View style={styles.container}>
-      <LoginScreen />
-      {/* <RegistrationScreen /> */}
+      {/* <LoginScreen /> */}
+      <RegistrationScreen />
     </View>
   );
 }

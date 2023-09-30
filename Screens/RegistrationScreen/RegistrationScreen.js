@@ -85,7 +85,6 @@ const styles = StyleSheet.create({
   wrapper: { flex: 1 },
 
   regContainer: {
-    position: 'relative',
     paddingTop: 92,
     paddingBottom: 45,
     paddingLeft: 16,
@@ -100,18 +99,19 @@ const styles = StyleSheet.create({
   },
 
   regLogo: {
-    position: 'absolute',
-    top: -152,
     width: 120,
     height: 120,
+    marginTop: -152,
+    flexDirection: 'row',
+    justifyContent: 'flex-end',
     backgroundColor: '#F6F6F6',
     borderRadius: 16,
   },
 
   regLogoSVG: {
-    position: 'absolute',
-    right: -12.5,
-    bottom: 14,
+    alignSelf: 'flex-end',
+    marginRight: -15,
+    marginBottom: 14,
   },
 
   regHeader: {
